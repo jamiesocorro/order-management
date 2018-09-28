@@ -7,7 +7,7 @@ import { UserDetailsService } from '../../service/user.service';
 })
 
 
-export class UpdateOrderComponent implements OnChanges {
+export class UpdateUserComponent implements OnChanges {
 
     @Input()
     user: any;
@@ -23,7 +23,8 @@ export class UpdateOrderComponent implements OnChanges {
     }
 
     updateUser(user) {
-        this._userService.updateUser(user);
+       const updateUser = this._userService.updateUser(user);
+       this.user.username = updateUser.username;
     }
 
     setDefault() {

@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { OrderComponent } from './order/order.component';
 import { CreateOrderComponent } from './shared/modal/create-order/create-order.component';
 import { UpdateOrderComponent } from './shared/modal/update-order/update-order.component';
+import { UpdateUserComponent } from './shared/modal/update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { UpdateOrderComponent } from './shared/modal/update-order/update-order.c
     OrderComponent,
     LoginComponent,
     CreateOrderComponent,
-    UpdateOrderComponent
+    UpdateOrderComponent,
+    UpdateUserComponent
     
   ],
   imports: [

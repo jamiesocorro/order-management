@@ -1,11 +1,12 @@
 import { Component, ViewChild, OnInit, AfterViewInit, OnDestroy, ViewContainerRef } from '@angular/core';
 import { OrderDetails } from '../shared/model/order.model';
 import { OrderDetailsService } from '../shared/service/order.service';
+import { UserDetailsService } from '../shared/service/user.service';
 
 @Component({
     selector: 'order',
     templateUrl: './order.component.html',
-    providers: [OrderDetailsService],
+    providers: [OrderDetailsService, UserDetailsService],
     styleUrls: ['./order.component.css']
 })
 

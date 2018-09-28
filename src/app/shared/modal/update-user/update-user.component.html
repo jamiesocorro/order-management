@@ -9,11 +9,11 @@
          <div>
             <div>
                 <label>Name</label>
-                <input [(ngModel)]="orders.name" placeholder="Name" style="margin: 10px" type="text" />
+                <input [(ngModel)]="userCopy.username" placeholder="Name" style="margin: 10px" type="text" />
             </div>
             <div>
                 <label>Password</label>
-                <input [(ngModel)]="orders.weight" placeholder="Password" style="margin: 10px" type="text" />
+                <input [(ngModel)]="userCopy.password" placeholder="Password" style="margin: 10px" type="text" />
             </div>
          
         </div>
@@ -21,7 +21,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="saveOrder(orders)" data-dismiss="modal">Save changes</button>
+        <button type="button" class="btn btn-primary" (click)="updateUser(userCopy)" data-dismiss="modal">Save changes</button>
       </div>
     </div>
   </div>

@@ -8,7 +8,7 @@
                 </a>
                 <p class="navbar-text">The Product</p>
                 <div class="flex flex-right">
-                    <div class="navbar-avatar-container" (click)="modifyDetail">
+                    <div class="navbar-avatar-container" data-toggle="modal" data-target="#update-user">
                         <div class="navbar-avatar-img-container">
                             <img class="navbar-avatar-img" src="https://shore-pro-tint.apptivate.it/assets/app/ionic/assets_dev/images/default_avatar.png"/>
                         </div>
@@ -71,3 +71,4 @@
 
 <create-order [orders]="orders"></create-order>
 <update-order [order]="currentOrder"></update-order>
+<update-user [user]="adminUser"></update-user>
