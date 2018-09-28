@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { OrderDetails } from './order.model';
 
-@Injectable() 
+@Injectable()
 export class OrderDetailsService {
     private orderDetails: OrderDetails[] = [
         {
@@ -30,13 +30,25 @@ export class OrderDetailsService {
         }
     ];
 
+    deleteOrder(i: any) {
+        return this.orderDetails.splice(i, 1);
+    }
+
     getOrders(): OrderDetails[] {
         return this.orderDetails;
     }
 
-    updateOrders(order: OrderDetails) {
+    saveOrders(order: OrderDetails) {
         return this.orderDetails.push(order);
     }
 
-  
+    updateOrder(order: any, i: any) {
+        this.orderDetails.forEach((item, index) => {
+            if(i === index) {
+                item = order;
+            }
+        });
+    }
+
+
 }

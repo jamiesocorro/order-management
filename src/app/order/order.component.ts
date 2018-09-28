@@ -43,6 +43,18 @@ export class OrderComponent implements OnInit {
            this.getOrders();
     }
 
+    initOrder() {
+        this.orders = {
+        id: 0,
+        name: null,
+        weight: null,
+        destination: null,
+        creation_date: null,
+        client_id: 0
+    }
+
+    }
+
     getOrders(){
         this.orderDetails = this._orderService.getOrders();
  
@@ -66,8 +78,16 @@ export class OrderComponent implements OnInit {
         });
     };
 
+    deleteOrder(i): void {
+        this._orderService.deleteOrder(i);
+    }
+
     saveOrder(): void {
-        this._orderService.updateOrders(this.orders);
+        this._orderService.saveOrders(this.orders);
+    }
+
+    updateOrder(order, i): void {
+        this._orderService.updateOrder(order, i);
     }
 
 

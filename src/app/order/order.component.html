@@ -1,69 +1,106 @@
-<div>
-    <div class="header">
-        <div class="header-details">nav</div>
-        <div class="header-details">The Product</div>
-        <div class="header-details header-details-right">
-            <div>
-                <div class="user-details">image</div>
-                <div class="user-details">John Smith</div>
-            </div>
-            <div>
-                logout button
-            </div>
+<div class="order-section">
 
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-menu-item navbar-brand" href="#">
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                </a>
+                <p class="navbar-text">The Product</p>
+                <div class="flex flex-right">
+                    <div class="navbar-avatar-container">
+                        <div class="navbar-avatar-img-container">
+                            <img class="navbar-avatar-img" src="https://shore-pro-tint.apptivate.it/assets/app/ionic/assets_dev/images/default_avatar.png"
+                            />
+                        </div>
+                        <div class="navbar-avatar-name">John Smith</div>
+                    </div>
+                    <a href="#" class="navbar-link">
+                        <i class="glyphicon glyphicon-log-in"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
-    <div>label</div>
-    <div> 
-        <button (click)="saveOrder(orders)">create order</button>
-    </div>
-    <div>
-        <div>
-            <label>ID</label>
-            <input [(ngModel)]="orders.id" style="margin: 10px" type="number"/>
-        </div>
-        <div>
-            <label>Name</label>
-            <input [(ngModel)]="orders.name" style="margin: 10px"type="text"/>
-        </div>
-        <div>
-            <label>Weight</label>
-            <input [(ngModel)]="orders.weight" style="margin: 10px"type="text"/>
-        </div>
-        <div>
-            <label>Destination</label>
-           <input [(ngModel)]="orders.destination" style="margin: 10px"type="text"/>
-        </div>
-        <div>
-            <label>Creation Date</label>
-            <input [(ngModel)]="orders.creation_date" style="margin: 10px"type="text"/>
-        </div>
-        <div>
-            <label>Client ID</label>
-            <input [(ngModel)]="orders.client_id" style="margin: 10px"type="text"/>
-        </div>
-                
-    </div>
-    <div>
+    </nav>
 
-        <table>
+    <header class="header flex">
+        <h1 class="header-title">Orders</h1>
+    </header>
+
+    <div class="create-order-panel">
+        <button type="button" class="button flex flex-right" data-toggle="modal" data-target="#myModal" (click)="initOrder()">
+            <i class="glyphicon glyphicon-plus"></i>
+            <span>Create Order</span>
+        </button>        
+    </div>
+   
+    <div class="pixc-table-container">
+        <table class="table table-hover">
             <thead>
                 <tr>
-                    <th *ngFor="let column of orderLabels" (click)="columnSort(column.field)">{{ column.label }}</th>
+                    <th class="column-labels" *ngFor="let column of orderLabels" (click)="columnSort(column.field)">{{ column.label }}</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let data of orderDetails">
+                <tr *ngFor="let data of orderDetails; let i = index">
                     <td contenteditable="true">{{ data.id }}</td>
                     <td contenteditable="true">{{ data.name }}</td>
                     <td contenteditable="true">{{ data.weight }}</td>
                     <td contenteditable="true">{{ data.destination }}</td>
                     <td contenteditable="true">{{ data.creation_date }}</td>
                     <td contenteditable="true">{{ data.client_id }}</td>
-
+                    <button (click)="deleteOrder(i)">delete</button>
+                    <button (click)="updateOrder(data, i)">update</button>
                 </tr>
             </tbody>
         </table>
-
     </div>
+
+</div>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create New Order</h4>
+      </div>
+      <div class="modal-body">
+         <div>
+            <div>
+                <label>ID</label>
+                <input [(ngModel)]="orders.id" style="margin: 10px" type="number" />
+            </div>
+            <div>
+                <label>Name</label>
+                <input [(ngModel)]="orders.name" style="margin: 10px" type="text" />
+            </div>
+            <div>
+                <label>Weight</label>
+                <input [(ngModel)]="orders.weight" style="margin: 10px" type="text" />
+            </div>
+            <div>
+                <label>Destination</label>
+                <input [(ngModel)]="orders.destination" style="margin: 10px" type="text" />
+            </div>
+            <div>
+                <label>Creation Date</label>
+                <input [(ngModel)]="orders.creation_date" style="margin: 10px" type="text" />
+            </div>
+            <div>
+                <label>Client ID</label>
+                <input [(ngModel)]="orders.client_id" style="margin: 10px" type="text" />
+            </div>
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="saveOrder(orders)" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>
