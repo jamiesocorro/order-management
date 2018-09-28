@@ -1,17 +1,13 @@
-<div class="flex-row">
-    <div class="login-container flex-column">
-        <div class="image-container"><img class="default-image" src="https://shore-pro-tint.apptivate.it/assets/app/ionic/assets_dev/images/default_avatar.png"/></div>
-        <div>
-            <div class="margin-10">
-                <input class="input" type="text" placeholder="Username" [(ngModel)]="user.name"/>
-            </div>
-            <div class="margin-10">
-                <input class="input" type="password" placeholder="Password" [(ngModel)]="user.password"/>
-            </div>
-            <div class="margin-10 center-align">
-                <button class="input-button" (click)="login()" routerLink="/order">Login</button>
-            </div>
-             
-        </div>
+<section class="login-section flex flex-column flex-center">
+
+    <h1 class="mb-10">PIXC</h1>
+    <h4 class="m-0 mb-10">Order Management System</h4>
+
+    <div class="login-form">
+        <div *ngIf="hasError" class="alert alert-danger" role="alert">username or password is incorrect</div>
+        <input class="input mb-10" type="text" placeholder="Username" [(ngModel)]="user.username"/>
+        <input class="input mb-20" type="password" placeholder="Password" [(ngModel)]="user.password"/>
+        <button class="button button-teal button-large" (click)="login()">Login</button>
     </div>
-</div>
+
+</section>
