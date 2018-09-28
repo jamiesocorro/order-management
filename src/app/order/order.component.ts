@@ -1,4 +1,5 @@
 import { Component, ViewChild, OnInit, AfterViewInit, OnDestroy, ViewContainerRef } from '@angular/core';
+import { OrderDetailsService } from './order.service';
 
 @Component({
     selector: 'order',
@@ -25,33 +26,8 @@ export class OrderComponent implements OnInit {
 
         ];
 
-        this.orderDetails = [
-            {
-                id: 1,
-                name: 'order1',
-                weight: '32kg',
-                destination: 'usa',
-                creation_date: '09-27-2018',
-                client_id: 1
-            },
-            {
-                id: 2,
-                name: 'order2',
-                weight: '33kg',
-                destination: 'ph',
-                creation_date: '09-27-2018',
-                client_id: 1
-            },
-            {
-                id: 3,
-                name: 'order3',
-                weight: '34kg',
-                destination: 'sg',
-                creation_date: '09-27-2018',
-                client_id: 2
-            }
-        ];
-
+        const orderService = new OrderDetailsService;
+        this.orderDetails = orderService.getOrders();
 
     }
 
@@ -72,5 +48,7 @@ export class OrderComponent implements OnInit {
             }
         });
     };
+
+    
 
 }
