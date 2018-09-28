@@ -14,7 +14,36 @@
         </div>
     </div>
     <div>label</div>
-    <div>create order</div>
+    <div> 
+        <button (click)="saveOrder(orders)">create order</button>
+    </div>
+    <div>
+        <div>
+            <label>ID</label>
+            <input [(ngModel)]="orders.id" style="margin: 10px" type="number"/>
+        </div>
+        <div>
+            <label>Name</label>
+            <input [(ngModel)]="orders.name" style="margin: 10px"type="text"/>
+        </div>
+        <div>
+            <label>Weight</label>
+            <input [(ngModel)]="orders.weight" style="margin: 10px"type="text"/>
+        </div>
+        <div>
+            <label>Destination</label>
+           <input [(ngModel)]="orders.destination" style="margin: 10px"type="text"/>
+        </div>
+        <div>
+            <label>Creation Date</label>
+            <input [(ngModel)]="orders.creation_date" style="margin: 10px"type="text"/>
+        </div>
+        <div>
+            <label>Client ID</label>
+            <input [(ngModel)]="orders.client_id" style="margin: 10px"type="text"/>
+        </div>
+                
+    </div>
     <div>
 
         <table>
