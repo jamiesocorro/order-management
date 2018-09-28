@@ -14,12 +14,12 @@ export class OrderComponent implements OnInit {
     orderLabels = [];
     orderDetails = [];
     orders: OrderDetails = {
-        id: 0,
+        id: null,
         name: null,
         weight: null,
         destination: null,
         creation_date: null,
-        client_id: 0
+        client_id: null
     }
 
     isDesc: boolean = false;

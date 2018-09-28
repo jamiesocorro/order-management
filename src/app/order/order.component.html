@@ -10,12 +10,11 @@
                 <div class="flex flex-right">
                     <div class="navbar-avatar-container">
                         <div class="navbar-avatar-img-container">
-                            <img class="navbar-avatar-img" src="https://shore-pro-tint.apptivate.it/assets/app/ionic/assets_dev/images/default_avatar.png"
-                            />
+                            <img class="navbar-avatar-img" src="https://shore-pro-tint.apptivate.it/assets/app/ionic/assets_dev/images/default_avatar.png"/>
                         </div>
                         <div class="navbar-avatar-name">John Smith</div>
                     </div>
-                    <a href="#" class="navbar-link">
+                    <a href="#" routerLink="/" class="navbar-link">
                         <i class="glyphicon glyphicon-log-in"></i>
                     </a>
                 </div>
@@ -71,27 +70,27 @@
          <div>
             <div>
                 <label>ID</label>
-                <input [(ngModel)]="orders.id" style="margin: 10px" type="number" />
+                <input [(ngModel)]="orders.id" placeholder="ID" style="margin: 10px" type="number" />
             </div>
             <div>
                 <label>Name</label>
-                <input [(ngModel)]="orders.name" style="margin: 10px" type="text" />
+                <input [(ngModel)]="orders.name" placeholder="Name" style="margin: 10px" type="text" />
             </div>
             <div>
                 <label>Weight</label>
-                <input [(ngModel)]="orders.weight" style="margin: 10px" type="text" />
+                <input [(ngModel)]="orders.weight" placeholder="Weight" style="margin: 10px" type="text" />
             </div>
             <div>
                 <label>Destination</label>
-                <input [(ngModel)]="orders.destination" style="margin: 10px" type="text" />
+                <input [(ngModel)]="orders.destination" placeholder="Destination" style="margin: 10px" type="text" />
             </div>
             <div>
                 <label>Creation Date</label>
-                <input [(ngModel)]="orders.creation_date" style="margin: 10px" type="text" />
+                <input [(ngModel)]="orders.creation_date" placeholder="Creation Date" style="margin: 10px" type="text" />
             </div>
             <div>
                 <label>Client ID</label>
-                <input [(ngModel)]="orders.client_id" style="margin: 10px" type="text" />
+                <input [(ngModel)]="orders.client_id" placeholder="Client ID" style="margin: 10px" type="text" />
             </div>
 
         </div>
