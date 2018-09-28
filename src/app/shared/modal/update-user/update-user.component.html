@@ -1,0 +1,28 @@
+<div class="modal fade" id="update-user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create New Order</h4>
+      </div>
+      <div class="modal-body">
+         <div>
+            <div>
+                <label>Name</label>
+                <input [(ngModel)]="orders.name" placeholder="Name" style="margin: 10px" type="text" />
+            </div>
+            <div>
+                <label>Password</label>
+                <input [(ngModel)]="orders.weight" placeholder="Password" style="margin: 10px" type="text" />
+            </div>
+         
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="saveOrder(orders)" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 import { Component, ViewChild, OnInit, AfterViewInit, OnDestroy, ViewContainerRef } from '@angular/core';
-import { OrderDetails } from './order.model';
-import { OrderDetailsService } from './order.service';
+import { OrderDetails } from '../shared/model/order.model';
+import { OrderDetailsService } from '../shared/service/order.service';
 
 @Component({
     selector: 'order',
@@ -11,6 +11,10 @@ import { OrderDetailsService } from './order.service';
 
 export class OrderComponent implements OnInit {
 
+    adminUser = null;
+    column: string = 'CategoryName';
+    currentOrder: any;
+    isDesc: boolean = false;
     orderLabels = [];
     orderDetails = [];
     orders: OrderDetails = {
@@ -21,9 +25,6 @@ export class OrderComponent implements OnInit {
         creation_date: null,
         client_id: null
     }
-
-    isDesc: boolean = false;
-    column: string = 'CategoryName';
 
     constructor(private _orderService: OrderDetailsService) {
     }
@@ -38,27 +39,24 @@ export class OrderComponent implements OnInit {
             { label: 'Creation Date', field: 'creation_date' },
             { label: 'Client Id', field: 'client_id' },
 
-        ];        
+        ];
 
-           this.getOrders();
+        this.getOrders();
+
+        this.adminUser = JSON.parse(localStorage.getItem('adminUser')) as any;
     }
 
     initOrder() {
         this.orders = {
-        id: 0,
-        name: null,
-        weight: null,
-        destination: null,
-        creation_date: null,
-        client_id: 0
-    }
+            id: 0,
+            name: null,
+            weight: null,
+            destination: null,
+            creation_date: null,
+            client_id: 0
+        }
 
     }
-
-    getOrders(){
-        this.orderDetails = this._orderService.getOrders();
- 
-    };
 
     columnSort(property) {
         this.isDesc = !this.isDesc;
@@ -80,15 +78,11 @@ export class OrderComponent implements OnInit {
 
     deleteOrder(i): void {
         this._orderService.deleteOrder(i);
-    }
+    }        
 
-    saveOrder(): void {
-        this._orderService.saveOrders(this.orders);
-    }
-
-    updateOrder(order, i): void {
-        this._orderService.updateOrder(order, i);
-    }
+     getOrders() {
+        this.orderDetails = this._orderService.getOrders();
+    };
 
 
 
