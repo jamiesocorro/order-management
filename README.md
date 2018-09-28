@@ -16,3 +16,8 @@ $ npm start
 
 Once the application starts it will be available in 
 `http://localhost:4200`
+
+## Initial Credentials
+ `Username: admin`
+ `Password: admin`
+
