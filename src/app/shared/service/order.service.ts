@@ -14,16 +14,7 @@ export class OrderDetailsService {
         const orders = this.orderDetails = JSON.parse(localStorage.getItem('orderDetails')) as any;
     
         if (!orders){
-             this.orderDetails = [
-                {
-                    id: 0,
-                    name: null,
-                    weight: null,
-                    destination: null,
-                    creation_date: null,
-                    client_id: 0
-                }
-            ];
+             this.orderDetails = [];
             return this.orderDetails;
         }
            
