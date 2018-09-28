@@ -1,0 +1,16 @@
+.header {
+    background-color: gray;
+    height: 100px
+}
+
+.user-details,
+.header-details {
+    vertical-align: middle;
+    display: inline-block;
+    margin: 10px;
+}
+
+.header-details-right {
+    float: right;
+}
+ 

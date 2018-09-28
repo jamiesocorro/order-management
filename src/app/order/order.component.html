@@ -1,0 +1,40 @@
+<div>
+    <div class="header">
+        <div class="header-details">nav</div>
+        <div class="header-details">The Product</div>
+        <div class="header-details header-details-right">
+            <div>
+                <div class="user-details">image</div>
+                <div class="user-details">John Smith</div>
+            </div>
+            <div>
+                logout button
+            </div>
+
+        </div>
+    </div>
+    <div>label</div>
+    <div>create order</div>
+    <div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th *ngFor="let column of orderLabels" (click)="columnSort(column.field)">{{ column.label }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of orderDetails">
+                    <td contenteditable="true">{{ data.id }}</td>
+                    <td contenteditable="true">{{ data.name }}</td>
+                    <td contenteditable="true">{{ data.weight }}</td>
+                    <td contenteditable="true">{{ data.destination }}</td>
+                    <td contenteditable="true">{{ data.creation_date }}</td>
+                    <td contenteditable="true">{{ data.client_id }}</td>
+
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
